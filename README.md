@@ -51,4 +51,12 @@
 
 
 
+## Week 2
+
+
+[GANs for Video](https://colab.research.google.com/github/https-deeplearning-ai/GANs-Public/blob/master/C1W2_Video_Generation_(Optional).ipynb)
+
+[paper: DCGAN](pdfs/DCGAN.1511.06434.pdf)
+
+
 
