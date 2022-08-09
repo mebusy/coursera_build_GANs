@@ -1,10 +1,8 @@
 # GAN
 
-## Week 1
+## Week 1 Intro to GANs
 
 - [Pre-trained Model Exploration](https://colab.research.google.com/github/https-deeplearning-ai/GANs-Public/blob/master/C1W1_(Colab)_Pre_trained_model_exploration.ipynb)
-
-### Intro to GANs
 
 - Generative Adversarial Network
     - Generator
@@ -51,12 +49,23 @@
 
 
 
-## Week 2
+## Week 2 Wasserstein GANs with Gradient Penalty
 
 
 [GANs for Video](https://colab.research.google.com/github/https-deeplearning-ai/GANs-Public/blob/master/C1W2_Video_Generation_(Optional).ipynb)
 
 [paper: DCGAN](pdfs/DCGAN.1511.06434.pdf)
+
+- Wasserstein Loss
+    - W-Loss approximates the Earth Mover's Distance
+    - W-Loss helps with mode collapse and vanishing gradient problems
+
+BCE Loss | W-Loss
+--- | --- 
+Discriminator outputs between 0 and 1 | Critic outputs any number 
+-[ 𝔼(log(d(x))) + 𝔼(1- log(d(g(z)))) ]  |  𝔼(c(x)) - 𝔼(c(g(z)))
+
+
 
 
 
