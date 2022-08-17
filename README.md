@@ -56,6 +56,20 @@
 
 [paper: DCGAN](pdfs/DCGAN.1511.06434.pdf)
 
+
+
+- Pooling and Upsampling
+    - Pooling reduces the size of input
+    - Upsampling increases the size of input
+    - No learnable parameters
+- Transposed Convolutions
+    - Transposed convolutions as an upsampling technique
+        - have learnable parameters
+    - Issues with transposed convolutions
+        - results have a checkerboard pattern
+
+
+
 - Wasserstein Loss
     - W-Loss approximates the Earth Mover's Distance
     - W-Loss helps with mode collapse and vanishing gradient problems
@@ -64,8 +78,3 @@ BCE Loss | W-Loss
 --- | --- 
 Discriminator outputs between 0 and 1 | Critic outputs any number 
 -[ 𝔼(log(d(x))) + 𝔼(1- log(d(g(z)))) ]  |  𝔼(c(x)) - 𝔼(c(g(z)))
-
-
-
-
-
