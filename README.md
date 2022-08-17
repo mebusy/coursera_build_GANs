@@ -49,7 +49,7 @@
 
 
 
-## Week 2 Wasserstein GANs with Gradient Penalty
+## Week2: Deep Convolutional GANs
 
 
 [GANs for Video](https://colab.research.google.com/github/https-deeplearning-ai/GANs-Public/blob/master/C1W2_Video_Generation_(Optional).ipynb)
@@ -68,13 +68,62 @@
     - Issues with transposed convolutions
         - results have a checkerboard pattern
 
+## Week 3 Wasserstein GANs with Gradient Penalty
 
 
+- Mode Collapse
+    - Modes are peaks in the distribution of features
+    - Typical with real-world datasets
+    - Mode collapse happens when the generator gets stuck in on mode (a local minima)
+- Problem with BCE Loss
+    - GANs try to make the real and generated distributions look similar
+    - WHen the discriminator improves too much, the function approximated by BCE Loss will contain flat regions.
+    - Flat regions on the cost function = **vanishing gradients**
+
+- Earth Mover’s Distance
+    - Earth mover's distance (EMD) is a function of amount and distance
+    - Doesn't have flat regions when the distributions are very different
+    - Approximating EMD solves the problems associated with BCE
 - Wasserstein Loss
     - W-Loss approximates the Earth Mover's Distance
     - W-Loss helps with mode collapse and vanishing gradient problems
+    - min<sub>g</sub> max<sub>c</sub> 𝔼(c(x)) - 𝔼(c(g(z)))
 
 BCE Loss | W-Loss
 --- | --- 
 Discriminator outputs between 0 and 1 | Critic outputs any number 
 -[ 𝔼(log(d(x))) + 𝔼(1- log(d(g(z)))) ]  |  𝔼(c(x)) - 𝔼(c(g(z)))
+
+- Condition on Wasserstein Critic
+    - Critic needs to be 1-L Continuous: the norm of the gradient should be at most 1 for every point
+    - This condition ensures that W-Loss is validly approximating Earch Mover's Distance
+
+- 1-Lipschitz Continuity Enforcement
+    - how to enforce 1-L continuous when training your critic ?
+        1. weight clipping
+            - weight clipping forces the weights of the critic to a fixed interval
+            - it will clip any weights that outside of the desired interval
+            - downside: limits the learning ability of the critic
+        2. gradient penalty
+            - add regularization of the critic's gradient
+            - min<sub>g</sub> max<sub>c</sub> 𝔼(c(x)) - 𝔼(c(g(z))) + **λreg**
+            - but to check the critics gradient at every possible point of the feature space  is virtually impossible or at least not pracical.
+            - instead with gradient penalty, we do sample some points by interpolating between real and fake examples
+                - Real·ε + Generated·(1-ε) → Random interpolation x̂
+        - Putting It All Together
+            - min<sub>g</sub> max<sub>c</sub> 𝔼(c(x)) - 𝔼(c(g(z))) + λ𝔼( ‖∇c(x̂)‖₂  -1 )²
+    - Gradient penalty tends to work better.
+
+
+---
+
+This article provides a great walkthrough of how WGAN addresses the difficulties of training a traditional GAN with a focus on the loss functions.
+
+From GAN to WGAN (Weng, 2017): https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html
+
+
+
+## Week 4
+
+
+
