@@ -123,7 +123,26 @@ From GAN to WGAN (Weng, 2017): https://lilianweng.github.io/lil-log/2017/08/20/
 
 
 
-## Week 4
+## Week 4 Conditional GAN & Controllable Generation
+
+Conditional vs. Unconditional Generation
+
+Conditional | Unconditional 
+--- | --- 
+Examples from **the classes you want** | Examples from **random classes**
+Training datasets needs to be labeled | Training dataset **doesn't need to be labeled**
+
+
+- Conditional Generation
+    - Conditional generation requires labeled datasets
+    - Examples can be generated for the selected class
+- How to tell the generator what type of example to product
+    - Generator Input:  Noise Vector + Class (one-hot) vector
+    - Discriminator Input: example + Class (ont-hot) matrices ( **channels**, full of ones or full of zeros )
+
+
+
+
 
 
 
