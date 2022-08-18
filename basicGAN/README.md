@@ -1,4 +1,4 @@
-# GAN
+# BUILD a Basic GAN
 
 ## Week 1 Intro to GANs
 
