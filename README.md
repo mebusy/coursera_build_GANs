@@ -140,9 +140,21 @@ Training datasets needs to be labeled | Training dataset **doesn't need to be la
     - Generator Input:  Noise Vector + Class (one-hot) vector
     - Discriminator Input: example + Class (ont-hot) matrices ( **channels**, full of ones or full of zeros )
 
+- Controllable Generation
+    - controlling what features you want in the output examples, even after the model has been trained
+    - tweak the input noise vector *z* to get different features on the output
 
 
+Controllable Generation vs. Conditional Generation
 
+Controllable | Conditional
+--- | ---
+Examples with the **features that you want** | Examples from the **classes you want**
+Training dataset doesn't need to be labeled | Training dataset needs to be labeled
+Manipulate the z vector | Append a class vector to the input
 
+- Challenges with Controllable Generation
+    - Output feature correlation
+    - Z-space entanglement
 
 
