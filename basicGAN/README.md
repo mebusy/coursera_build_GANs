@@ -153,8 +153,30 @@ Examples with the **features that you want** | Examples from the **classes you w
 Training dataset doesn't need to be labeled | Training dataset needs to be labeled
 Manipulate the z vector | Append a class vector to the input
 
+
 - Challenges with Controllable Generation
     - Output feature correlation
+        - add bread may make more masculine
     - Z-space entanglement
+        - movement in the different directions has an effect on multiple features simultaneously in the output
+        - it's not possible to control single output features
+        - this is a very common problem when the Z-space doesn't have enough dimensions relative to the number of features you want to control in the output features.
+
+- Classifier Gradients
+    - Classifiers can be used to find directions in the Z-space
+    - use pre-trained classifier , modify **just** the noise vector until the feature emerges
+
+
+- Disentanglement
+    - a disentangled Z-space means that there are specific indices on noise vectors, there specific dimensions that change particular features on the output of you GAN.
+        - index -> feature
+    - changes to one feature don't affect the others
+
+- Encourage Disentanglement
+    - Supervison
+        - one way to encourage your model to use disentangled Z-spaces is to label your data and follow a similar process the one used for conditional generation, but in this case , the information of the class is embeded in the noise vector, that is , no longer need one-hot class vector. However using this method could be problematic for continuous classes.
+    - Loss Function ( UnSupervised )
+        - add a regularization term
+
 
 
