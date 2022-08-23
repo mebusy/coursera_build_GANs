@@ -102,4 +102,35 @@
 
 
 
+## Week2 GAN Disadvantages and Bias
+
+- Disadvantages of GANs
+    - Lack of intrinsic evaluation metrics
+    - Unstable training
+    - No density estimation
+    - Inverting is not straightforward
+- Alternatives to GANs
+    - VAEs ( Variational Autoencoders)
+    - What is the core difference between GANs and VAEs?
+        - VAEs use autoencoders to encode a real image and then decode them while GAN generators never see the real image in any form.
+
+Advantags | Disadvantages
+--- | ---
+Has density estimation | Lower quality results
+Invertible | 
+Stable training | 
+
+
+[Lab: VAEs](https://www.coursera.org/learn/build-better-generative-adversarial-networks-gans/ungradedLab/bKSQx/alternatives-variational-autoencoders-vaes/lab)
+
+
+
+
+
+
+
+
+
+
+
 
