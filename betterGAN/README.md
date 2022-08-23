@@ -96,4 +96,10 @@
 [(Optional) More on Precision and Recall](pdfs/1904.06991.pdf)
 
 
+---
+
+[Lab: (Optional) Perceptual Path Length](https://www.coursera.org/learn/build-better-generative-adversarial-networks-gans/ungradedLab/BQjUq/optional-perceptual-path-length/lab)
+
+
+
 
