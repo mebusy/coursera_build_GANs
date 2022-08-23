@@ -123,7 +123,12 @@ Stable training |
 
 [Lab: VAEs](https://www.coursera.org/learn/build-better-generative-adversarial-networks-gans/ungradedLab/bKSQx/alternatives-variational-autoencoders-vaes/lab)
 
+---
 
+- Fairness in Machine Learning
+    - difficult to define
+    - there is no single definition of fairness
+    - important to explore these before releasing a system into production
 
 
 
