@@ -132,6 +132,39 @@ Stable training |
 
 
 
+## Week3 StyleGAN and Advancements
+
+- GAN Improvements
+    - Stability - longer training and better images
+        - Use moving average for smoother results
+            - take averages of the weights of generator at different iterations
+        - progressive growing
+            - gradually trains GAN at increasing resolutions
+    - Capacity - Larger models can use higher resolution images
+    - Diversity - increasing variety in generated images
+
+---
+
+- StyleGAN Overview
+    - StyleGAN Goals
+        - Greater fidelity on high-resolution images
+        - Increased diversity of outputs
+        - More control over image features
+    - Style in GANs
+        - Can be any variation in the image, from larger, coarser styles to finer, more detailed styles
+- The Sytle-Based Generator
+    ```
+    noise vector: z → Mapping Network → Intermediate noise: w → StyleGAN Generator → output
+                                                 random noise ➚
+    ```
+- Progressive Growing
+    - during the training process, both the generator and discriminator start with a small low resolution image. 
+    - And the goal servers trained the generator to be able to generate something easier than a high resolution face, 
+    - when the models are stable, they can then double the height and width. 
+    - And this continues until the desired image resolution is reached. 
+    - The doubling can't be too abrupt, but must be more gradual in order to ease the generator into generating those larger images. 
+
+---
 
 
 
