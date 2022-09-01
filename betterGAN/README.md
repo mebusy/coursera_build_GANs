@@ -212,9 +212,14 @@ Stable training |
         - later for finer variation
 
 
+---
+
+GAN — StyleGAN & StyleGAN2 (Hui, 2020): https://medium.com/@jonathan_hui/gan-stylegan-stylegan2-479bdf256299
 
 
+(Optional Notebook) Finetuning Notebook: FreezeD
 
+Notebook: https://colab.research.google.com/github/https-deeplearning-ai/GANs-Public/blob/master/C2W3_FreezeD_(Optional).ipynb
 
 
 
