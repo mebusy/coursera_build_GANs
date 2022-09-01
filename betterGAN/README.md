@@ -166,6 +166,56 @@ Stable training |
 
 ---
 
+- Progressive Growing
+    - gradually doules image resolution
+    - helps with faster, more stable training for higher resolutions
+- progressive growing: generator
+    - ![](imgs/pg_generator.png)
+- progressive growing: discriminator
+    - ![](imgs/pg_discriminator.png)
+- progressive growing in Context
+    - ![](imgs/pg_context.png)
+
+
+---
+
+- Noise Mapping Network
+    - ![](imgs/noise_mapping_network.png)
+    - the motivation behind this is that mapping your noise vector will actually get you a more disentangled representation.
+        - ![](imgs/intermediate_noise_vector.png)
+        - the intermediate noise vector is used as inputs to the generator
+
+---
+
+**Adaptive Instance Normalization (AdaIN)**
+
+- AdaIn in Context
+    - ![](imgs/adaIn_in_context.png)
+- AdaIn
+    - ![](imgs/adaIn.png)
+    - **Normalize** convolution outpus using **Instance Normalization**.
+    - Apply **adaptive sytles** using the intermediate noise vector
+- Instance Normalization
+    - ![](imgs/instance_norm.png)
+    - only look at 1 example, 1 instance
+- Adaptive Instance Normalization (AdaIN)
+    - AdaIN transfers style information onto the generated image from the intermediate noise vector w
+    - Instance Normalization is used to normalize individual examples before apply style statistics from w
+
+---
+
+- Style and Stochastic Variation
+    - Style mixing with your intermediate noise vectors, can increase the diversity that the model sees during training and allow you to control coarse or finer styles. 
+    - Stochastic noise is another way to inject small variation into your output
+    - Coarse or fineness depends on where in the network your style mixing or noise is added in 
+        - earlier for coarser variation 
+        - later for finer variation
+
+
+
+
+
+
 
 
 
